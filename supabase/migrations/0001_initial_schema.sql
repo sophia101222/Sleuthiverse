@@ -142,9 +142,9 @@ returns text
 language sql
 security definer
 set search_path = ''
-as $
+as $$
   select role from public.profiles where id = auth.uid()
-$;
+$$;
 
 create policy "Members can update their own profile" on public.profiles
 for update using (auth.uid() = id)
