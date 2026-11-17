@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { redirect } from "next/navigation";
 import { createPost } from "./actions";
 import { createClient } from "@/lib/supabase/server";
+
+type CommunityPost = { id: string; title: string; body: string; spoiler: boolean; created_at: string; profiles?: { display_name: string }[]; categories?: { name: string }[] };
 
 export default async function CommunityPage({ searchParams }: { searchParams: Promise<{ error?: string }> }) {
   const { error: message } = await searchParams;
@@ -44,7 +45,7 @@ export default async function CommunityPage({ searchParams }: { searchParams: Pr
         <div className="feed-heading"><h2>Recent discussions</h2><span>{posts?.length ?? 0} POSTS</span></div>
         {error && <p className="product-error">The discussion feed could not be loaded. Please refresh and try again.</p>}
         <div className="post-feed">
-          {(posts ?? []).map((post: any) => (
+          {((posts ?? []) as CommunityPost[]).map((post) => (
             <article className="post-card" key={post.id}>
               <div className="post-meta"><span>{post.categories?.[0]?.name ?? "General discussion"}</span><span>{new Date(post.created_at).toLocaleDateString("en-CA", { month: "short", day: "numeric" })}</span></div>
               <h3><Link href={`/community/${post.id}`}>{post.title}</Link></h3>
