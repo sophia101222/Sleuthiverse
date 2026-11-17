@@ -46,10 +46,10 @@ export default async function CommunityPage({ searchParams }: { searchParams: Pr
         <div className="post-feed">
           {(posts ?? []).map((post: any) => (
             <article className="post-card" key={post.id}>
-              <div className="post-meta"><span>{post.categories?.name ?? "General discussion"}</span><span>{new Date(post.created_at).toLocaleDateString("en-CA", { month: "short", day: "numeric" })}</span></div>
+              <div className="post-meta"><span>{post.categories?.[0]?.name ?? "General discussion"}</span><span>{new Date(post.created_at).toLocaleDateString("en-CA", { month: "short", day: "numeric" })}</span></div>
               <h3><Link href={`/community/${post.id}`}>{post.title}</Link></h3>
               {post.spoiler ? <details className="spoiler-block"><summary>Spoiler content — reveal</summary><p>{post.body}</p></details> : <p>{post.body}</p>}
-              <div className="post-byline">Posted by {post.profiles?.display_name ?? "Investigator"}</div>
+              <div className="post-byline">Posted by {post.profiles?.[0]?.display_name ?? "Investigator"}</div>
             </article>
           ))}
           {!error && (posts ?? []).length === 0 && <div className="empty-feed">No discussions yet. Start the first conversation.</div>}
