@@ -84,7 +84,7 @@ export default function Home() {
           ))}
         </nav>
         <div className="sidebar-note">
-          <div className="note-stamp"><Shield size={15}/> MEMBER'S NOTE</div>
+          <div className="note-stamp"><Shield size={15}/> MEMBER&apos;S NOTE</div>
           <p>Every mystery leaves a trace. Every curious mind belongs here.</p>
           <span>EST. FOR THE CURIOUS</span>
         </div>
@@ -118,7 +118,7 @@ export default function Home() {
               <div className="magnifier"><div className="lens"><Fingerprint size={78} strokeWidth={0.8}/></div><div className="handle"/></div>
               <div className="paper paper-back"><span>FIELD NOTES</span><b>Observe.<br/>Connect.<br/>Deduce.</b><i>— THE INVESTIGATOR</i></div>
               <div className="paper paper-front"><small>CASE STUDY / 001</small><strong>THE ART OF<br/>NOTICING</strong><div className="paper-lines"/><span>Nothing is insignificant.</span></div>
-              <div className="art-bottom"><span>FIG. A — THE INVESTIGATOR'S DESK</span><span>01 / 05</span></div>
+              <div className="art-bottom"><span>FIG. A — THE INVESTIGATOR&apos;S DESK</span><span>01 / 05</span></div>
             </div>
           </section>
 
