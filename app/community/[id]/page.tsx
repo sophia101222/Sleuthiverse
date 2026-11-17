@@ -20,15 +20,15 @@ export default async function DiscussionDetailPage({ params, searchParams }: { p
       <div className="product-content narrow-content">
         <Link href="/community" className="back-link">← Back to the reading room</Link>
         <article className="post-detail">
-          <div className="product-eyebrow">{post.categories?.name ?? "GENERAL DISCUSSION"}</div>
+          <div className="product-eyebrow">{post.categories?.[0]?.name ?? "GENERAL DISCUSSION"}</div>
           <h1>{post.title}</h1>
           {post.spoiler ? <details className="spoiler-block" open><summary>Spoiler content</summary><p>{post.body}</p></details> : <p className="detail-body">{post.body}</p>}
-          <div className="post-byline">Posted by {post.profiles?.display_name ?? "Investigator"} · {new Date(post.created_at).toLocaleString()}</div>
+          <div className="post-byline">Posted by {post.profiles?.[0]?.display_name ?? "Investigator"} · {new Date(post.created_at).toLocaleString()}</div>
         </article>
         {message && <p className="product-error">{message}</p>}
         <section className="comments-section">
           <h2>Discussion <span>{comments?.length ?? 0}</span></h2>
-          {(comments ?? []).map((comment: any) => <article className="comment-card" key={comment.id}><p>{comment.body}</p><small>{comment.profiles?.display_name ?? "Investigator"} · {new Date(comment.created_at).toLocaleString()}</small></article>)}
+          {(comments ?? []).map((comment: any) => <article className="comment-card" key={comment.id}><p>{comment.body}</p><small>{comment.profiles?.[0]?.display_name ?? "Investigator"} · {new Date(comment.created_at).toLocaleString()}</small></article>)}
           {user ? <form action={addComment} className="compose-card"><input type="hidden" name="postId" value={id}/><label>Add your perspective<textarea name="body" rows={4} maxLength={8000} required placeholder="Keep it thoughtful and mark spoilers in the main post..." /></label><button className="product-primary" type="submit">Add comment</button></form> : <div className="signin-prompt"><Link href="/login">Sign in</Link> to join the discussion.</div>}
         </section>
       </div>
