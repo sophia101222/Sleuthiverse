@@ -51,10 +51,15 @@ create table if not exists public.challenges (
   premise text not null check (char_length(premise) between 20 and 12000),
   category text not null default 'Other',
   difficulty text not null default 'Intermediate' check (difficulty in ('Beginner', 'Intermediate', 'Advanced')),
-  answer text,
   reveal_at timestamptz,
   status text not null default 'published' check (status in ('published', 'closed', 'hidden')),
   created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
+create table if not exists public.challenge_answers (
+  challenge_id uuid primary key references public.challenges(id) on delete cascade,
+  answer text not null check (char_length(answer) between 1 and 12000),
   updated_at timestamptz not null default now()
 );
 
@@ -127,12 +132,23 @@ alter table public.posts enable row level security;
 alter table public.comments enable row level security;
 alter table public.challenges enable row level security;
 alter table public.theories enable row level security;
+alter table public.challenge_answers enable row level security;
 alter table public.saved_items enable row level security;
 
 create policy "Profiles are viewable by everyone" on public.profiles
 for select using (true);
+create or replace function public.current_profile_role()
+returns text
+language sql
+security definer
+set search_path = ''
+as $
+  select role from public.profiles where id = auth.uid()
+$;
+
 create policy "Members can update their own profile" on public.profiles
-for update using (auth.uid() = id) with check (auth.uid() = id and role = (select p.role from public.profiles p where p.id = auth.uid()));
+for update using (auth.uid() = id)
+with check (auth.uid() = id and role = public.current_profile_role());
 
 create policy "Categories are public" on public.categories
 for select using (true);
@@ -166,6 +182,12 @@ for update to authenticated using (author_id = auth.uid()) with check (author_id
 create policy "Authors can delete challenges" on public.challenges
 for delete to authenticated using (author_id = auth.uid());
 
+create policy "Only challenge authors can read answers" on public.challenge_answers
+for select using (exists (select 1 from public.challenges c where c.id = challenge_id and c.author_id = auth.uid()));
+create policy "Challenge authors manage answers" on public.challenge_answers
+for all to authenticated using (exists (select 1 from public.challenges c where c.id = challenge_id and c.author_id = auth.uid()))
+with check (exists (select 1 from public.challenges c where c.id = challenge_id and c.author_id = auth.uid()));
+
 create policy "Theory visibility follows author setting" on public.theories
 for select using (author_id = auth.uid() or visibility = 'public');
 create policy "Members can submit theories" on public.theories
@@ -192,5 +214,6 @@ insert into public.categories (name, slug, description, sort_order) values
 on conflict (slug) do nothing;
 
 grant select on public.profiles, public.categories, public.posts, public.comments, public.challenges, public.theories to anon, authenticated;
-grant insert, update, delete on public.profiles, public.posts, public.comments, public.challenges, public.theories, public.saved_items to authenticated;
+grant insert, update, delete on public.profiles, public.posts, public.comments, public.challenges, public.theories, public.saved_items, public.challenge_answers to authenticated;
 grant select, insert, delete on public.saved_items to authenticated;
+grant select, insert, update, delete on public.challenge_answers to authenticated;
