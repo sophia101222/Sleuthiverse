@@ -58,7 +58,16 @@ export async function signUp(_prev: AuthState, formData: FormData): Promise<Auth
     },
   });
 
-  if (error) return { error: "We couldn't create your account. Check the details and try again." };
+  if (error) {
+    const message = error.message.toLowerCase();
+    if (error.status === 429 || message.includes("rate limit") || message.includes("email rate limit")) {
+      return { error: "Too many confirmation emails have been requested. Please wait before trying again. If you already registered, go to the sign-in page and use “Resend confirmation email” later." };
+    }
+    if (message.includes("already registered") || message.includes("user already exists")) {
+      return { error: "An account may already exist with this email. Try signing in or use “Resend confirmation email” on the sign-in page." };
+    }
+    return { error: "We couldn't create your account. Check that your email is valid and your password has at least 8 characters, then try again." };
+  }
   if (data.session) redirect("/dashboard");
   redirect("/login?message=Check%20your%20email%20to%20confirm%20your%20account.");
 }
