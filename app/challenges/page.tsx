@@ -2,6 +2,8 @@ import Link from "next/link";
 import { createChallenge } from "./actions";
 import { createClient } from "@/lib/supabase/server";
 
+type ChallengeItem = { id: string; title: string; premise: string; category: string; difficulty: string; created_at: string; profiles?: { display_name: string }[] };
+
 export default async function ChallengesPage({ searchParams }: { searchParams: Promise<{ error?: string }> }) {
   const { error: message } = await searchParams;
   const supabase = await createClient();
@@ -32,7 +34,7 @@ export default async function ChallengesPage({ searchParams }: { searchParams: P
         ) : <div className="signin-prompt">Have a mystery to share? <Link href="/login">Sign in</Link> or <Link href="/signup">create an account</Link>.</div>}
         <div className="feed-heading"><h2>Open cases</h2><span>{challenges?.length ?? 0} CASES</span></div>
         <div className="challenge-feed">
-          {(challenges ?? []).map((item: any) => <article className="challenge-card" key={item.id}>
+          {((challenges ?? []) as ChallengeItem[]).map((item) => <article className="challenge-card" key={item.id}>
             <div className="post-meta"><span>{item.category}</span><span>{item.difficulty}</span></div>
             <h3><Link href={`/challenges/${item.id}`}>{item.title}</Link></h3>
             <p>{item.premise}</p>
