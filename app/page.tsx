@@ -2,9 +2,9 @@
 
 import { useMemo, useState } from "react";
 import {
-  ArrowDownRight, ArrowRight, BookOpen, Bookmark, Brain, ChevronDown,
-  Clock3, Compass, Feather, FileSearch, Filter, Fingerprint, Library,
-  Lightbulb, Menu, MessageCircle, Plus, Search, Shield, Sparkles,
+  ArrowDownRight, ArrowRight, BookOpen, Bookmark, ChevronDown,
+  Clock3, Compass, Feather, FileSearch, Fingerprint, Library,
+  Lightbulb, Menu, MessageCircle, Search, Shield, Sparkles,
   Users, X, type LucideIcon
 } from "lucide-react";
 
