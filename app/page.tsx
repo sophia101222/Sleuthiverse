@@ -127,7 +127,7 @@ export default function Home() {
           <section className="section-block" id="challenges">
             <div className="section-heading">
               <div><div className="eyebrow"><span/> THE CASE ROOM</div><h2>Open <em>investigations</em></h2><p>Small mysteries. Big questions. Your deduction starts here.</p></div>
-              <button className="outline-button" onClick={() => setShowAll(!showAll)}>{showAll?"Show featured":"Browse all cases"} <ArrowRight size={15}/></button>
+              <div className="section-actions"><button className="outline-button" onClick={() => setShowAll(!showAll)}>{showAll?"Show featured":"Show featured set"} <ArrowRight size={15}/></button><Link className="outline-button" href="/challenges">Open case room <ArrowRight size={15}/></Link></div>
             </div>
             <div className="case-toolbar">
               <div className="filter-tabs">{categories.map((c) => <button key={c} className={category===c?"filter-tab selected":"filter-tab"} onClick={() => setCategory(c)}>{c}</button>)}</div>
@@ -147,11 +147,11 @@ export default function Home() {
           </section>
 
           <section className="community-section" id="community">
-            <div className="community-intro"><div className="eyebrow"><span/> THE READING ROOM</div><h2>Good theories<br/>are <em>better shared.</em></h2><p>A thoughtful corner for readers who love a clever reveal, a fair-play mystery, and a spirited discussion.</p><button className="text-button" onClick={()=>setActive("Community")}>Enter the discussion room <ArrowRight size={15}/></button></div>
+            <div className="community-intro"><div className="eyebrow"><span/> THE READING ROOM</div><h2>Good theories<br/>are <em>better shared.</em></h2><p>A thoughtful corner for readers who love a clever reveal, a fair-play mystery, and a spirited discussion.</p><Link className="text-button" href="/community">Enter the discussion room <ArrowRight size={15}/></Link></div>
             <div className="discussion-list">
               <div className="discussion-header"><span>RECENT CONVERSATIONS</span><span>COMMUNITY NOTES <ArrowRight size={13}/></span></div>
               {discussions.map((d)=><article className="discussion-row" key={d.title}><div className={`discussion-avatar ${d.color}`}>{d.initials}</div><div className="discussion-content"><span>{d.topic}</span><h3>{d.title}</h3><small>{d.last}</small></div><div className="discussion-replies"><MessageCircle size={14}/>{d.replies}</div><ArrowRight className="discussion-arrow" size={16}/></article>)}
-              <button className="all-discussions" onClick={()=>setActive("Community")}>View all conversations <ArrowRight size={14}/></button>
+              <Link className="all-discussions" href="/community">View all conversations <ArrowRight size={14}/></Link>
             </div>
           </section>
 
