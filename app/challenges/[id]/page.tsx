@@ -3,7 +3,8 @@ import { notFound } from "next/navigation";
 import { submitTheory } from "../actions";
 import { createClient } from "@/lib/supabase/server";
 
-export default async function ChallengeDetailPage({ params }: { params: Promise<{ id: string }> }) {
+export default async function ChallengeDetailPage({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<{ error?: string }> }) {
+  const { error: message } = await searchParams;
   const { id } = await params;
   const supabase = await createClient();
   const [{ data: { user } }, { data: challenge }, { data: theories }, { data: officialAnswer }] = await Promise.all([
@@ -27,6 +28,7 @@ export default async function ChallengeDetailPage({ params }: { params: Promise<
           <div className="post-byline">Case opened by {challenge.profiles?.display_name ?? "Investigator"} · {new Date(challenge.created_at).toLocaleDateString()}</div>
           {user?.id === challenge.author_id && officialAnswer?.answer && <details className="spoiler-block author-answer"><summary>Your private official solution</summary><p>{officialAnswer.answer}</p></details>}
         </article>
+        {message && <p className="product-error">{message}</p>}
         <section className="comments-section">
           <h2>Your deduction</h2>
           {user ? <form action={submitTheory} className="compose-card"><input type="hidden" name="challengeId" value={id}/><label>Record your theory<textarea name="body" required maxLength={12000} rows={6} placeholder="Explain which clues support your conclusion and how they fit together..." /></label><label>Visibility<select name="visibility" defaultValue="private"><option value="private">Private — only I can see this</option><option value="public">Public — share with the society</option></select></label><button className="product-primary" type="submit">Save deduction</button></form> : <div className="signin-prompt"><Link href="/login">Sign in</Link> to save your deduction.</div>}
