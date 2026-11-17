@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import {
   ArrowDownRight, ArrowRight, BookOpen, Bookmark, ChevronDown,
   Clock3, Compass, Feather, FileSearch, Fingerprint, Library,
@@ -96,7 +97,7 @@ export default function Home() {
         <header className="topbar">
           <button className="mobile-menu" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">{menuOpen?<X/>:<Menu/>}</button>
           <div className="breadcrumb"><span>THE SOCIETY</span><b>/</b><strong>{active.toUpperCase()}</strong></div>
-          <div className="top-actions"><span className="status-dot"/> <span className="status-text">THE ARCHIVES ARE OPEN</span><button className="join-button" onClick={() => document.getElementById("community")?.scrollIntoView({behavior:"smooth"})}>Explore the society <ArrowRight size={15}/></button></div>
+          <div className="top-actions"><span className="status-dot"/> <span className="status-text">THE ARCHIVES ARE OPEN</span><Link className="join-button" href="/signup">Join the society <ArrowRight size={15}/></Link><Link className="text-button" href="/login">Sign in</Link></div>
         </header>
 
         <div className="content-wrap">
