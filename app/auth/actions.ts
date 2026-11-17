@@ -12,9 +12,31 @@ export async function signIn(_prev: AuthState, formData: FormData): Promise<Auth
 
   const supabase = await createClient();
   const { error } = await supabase.auth.signInWithPassword({ email, password });
-  if (error) return { error: "We couldn't sign you in. Check your details and try again." };
+  if (error) {
+    if (error.message.toLowerCase().includes("email not confirmed")) {
+      return { error: "Your email address has not been confirmed yet. Use the button below to resend the confirmation email." };
+    }
+    return { error: "We couldn't sign you in. Check your email and password, then try again." };
+  }
 
   redirect("/dashboard");
+}
+
+export async function resendConfirmation(_prev: AuthState, formData: FormData): Promise<AuthState> {
+  const email = String(formData.get("email") ?? "").trim();
+  if (!email) return { error: "Enter your email address first." };
+
+  const supabase = await createClient();
+  const { error } = await supabase.auth.resend({
+    type: "signup",
+    email,
+    options: {
+      emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"}/auth/callback`,
+    },
+  });
+
+  if (error) return { error: "We couldn't resend the email right now. Please wait a little and try again." };
+  return { success: "If this account still needs confirmation, a new email has been sent. Check your inbox and spam folder." } as AuthState;
 }
 
 export async function signUp(_prev: AuthState, formData: FormData): Promise<AuthState> {
