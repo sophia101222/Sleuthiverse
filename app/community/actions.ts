@@ -3,21 +3,19 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 
-export type CommunityState = { error?: string };
-
-export async function createPost(_prev: CommunityState, formData: FormData): Promise<CommunityState> {
+export async function createPost(formData: FormData): Promise<void> {
   const title = String(formData.get("title") ?? "").trim();
   const body = String(formData.get("body") ?? "").trim();
   const categoryId = String(formData.get("categoryId") ?? "");
   const spoiler = formData.get("spoiler") === "on";
 
   if (title.length < 3 || title.length > 180 || body.length < 1 || body.length > 20000) {
-    return { error: "Add a title (3–180 characters) and a post (up to 20,000 characters)." };
+    redirect("/community?error=Please%20check%20the%20title%20and%20post%20length.");
   }
 
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
-  if (!user) return { error: "Sign in before starting a discussion." };
+  if (!user) redirect("/login");
 
   const { error } = await supabase.from("posts").insert({
     author_id: user.id,
@@ -28,20 +26,22 @@ export async function createPost(_prev: CommunityState, formData: FormData): Pro
     status: "published",
   });
 
-  if (error) return { error: "Your discussion could not be published. Please try again." };
+  if (error) redirect("/community?error=Your%20discussion%20could%20not%20be%20published.");
   redirect("/community");
 }
 
-export async function addComment(_prev: CommunityState, formData: FormData): Promise<CommunityState> {
+export async function addComment(formData: FormData): Promise<void> {
   const postId = String(formData.get("postId") ?? "");
   const body = String(formData.get("body") ?? "").trim();
-  if (!postId || !body || body.length > 8000) return { error: "Write a comment of up to 8,000 characters." };
+  if (!postId || !body || body.length > 8000) {
+    redirect(`/community/${postId}?error=Write%20a%20comment%20of%20up%20to%208%2C000%20characters.`);
+  }
 
   const supabase = await createClient();
   const { data: { user } } = await supabase.auth.getUser();
-  if (!user) return { error: "Sign in to join the discussion." };
+  if (!user) redirect("/login");
 
   const { error } = await supabase.from("comments").insert({ post_id: postId, author_id: user.id, body });
-  if (error) return { error: "Your comment could not be added. Please try again." };
+  if (error) redirect(`/community/${postId}?error=Your%20comment%20could%20not%20be%20added.`);
   redirect(`/community/${postId}`);
 }
