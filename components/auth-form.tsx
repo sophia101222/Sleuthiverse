@@ -23,7 +23,7 @@ export function AuthForm({ action, mode, resendAction }: Props) {
       <button type="submit" disabled={pending}>{pending ? "Please wait..." : mode === "login" ? "Sign in" : "Create account"}</button>
       {mode === "login" && resendAction && (
         <div className="resend-confirmation">
-          <p>Haven't confirmed your email yet?</p>
+          <p>Haven&apos;t confirmed your email yet?</p>
           <button type="submit" formAction={resendFormAction} disabled={resendPending} className="auth-secondary-button">
             {resendPending ? "Sending..." : "Resend confirmation email"}
           </button>
