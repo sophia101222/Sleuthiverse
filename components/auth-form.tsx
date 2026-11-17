@@ -9,9 +9,19 @@ type Props = {
   resendAction?: (state: AuthState, formData: FormData) => Promise<AuthState>;
 };
 
+const emptyAuthState: AuthState = {};
+
+async function noopResendAction(_state: AuthState, _formData: FormData): Promise<AuthState> {
+  return {};
+}
+
 export function AuthForm({ action, mode, resendAction }: Props) {
-  const [state, formAction, pending] = useActionState(action, {});
-  const [resendState, resendFormAction, resendPending] = useActionState(resendAction ?? (async () => ({})), {});
+  const [state, formAction, pending] = useActionState(action, emptyAuthState);
+  const [resendState, resendFormAction, resendPending] = useActionState(
+    resendAction ?? noopResendAction,
+    emptyAuthState,
+  );
+
   return (
     <form action={formAction} className="auth-form">
       {mode === "signup" && (
