@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import { addComment } from "../actions";
 import { createClient } from "@/lib/supabase/server";
 
+type DiscussionComment = { id: string; body: string; created_at: string; parent_id: string | null; profiles?: { display_name: string }[] };
+
 export default async function DiscussionDetailPage({ params, searchParams }: { params: Promise<{ id: string }>; searchParams: Promise<{ error?: string }> }) {
   const { error: message } = await searchParams;
   const { id } = await params;
@@ -28,7 +30,7 @@ export default async function DiscussionDetailPage({ params, searchParams }: { p
         {message && <p className="product-error">{message}</p>}
         <section className="comments-section">
           <h2>Discussion <span>{comments?.length ?? 0}</span></h2>
-          {(comments ?? []).map((comment: any) => <article className="comment-card" key={comment.id}><p>{comment.body}</p><small>{comment.profiles?.[0]?.display_name ?? "Investigator"} · {new Date(comment.created_at).toLocaleString()}</small></article>)}
+          {((comments ?? []) as DiscussionComment[]).map((comment) => <article className="comment-card" key={comment.id}><p>{comment.body}</p><small>{comment.profiles?.[0]?.display_name ?? "Investigator"} · {new Date(comment.created_at).toLocaleString()}</small></article>)}
           {user ? <form action={addComment} className="compose-card"><input type="hidden" name="postId" value={id}/><label>Add your perspective<textarea name="body" rows={4} maxLength={8000} required placeholder="Keep it thoughtful and mark spoilers in the main post..." /></label><button className="product-primary" type="submit">Add comment</button></form> : <div className="signin-prompt"><Link href="/login">Sign in</Link> to join the discussion.</div>}
         </section>
       </div>
