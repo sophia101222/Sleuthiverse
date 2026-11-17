@@ -29,7 +29,6 @@ const starter: DeskData = {
   notes: "Working theory:\nThe timeline may be more useful than any single statement. Keep observed facts separate from interpretations.\n\nQuestions to test:\n- Which clock was checked most recently?\n- Do the guests agree on the order of events?",
 };
 
-const emptyData: DeskData = { events: [], people: [], clues: [], notes: "" };
 type Tab = "timeline" | "people" | "clues" | "notes";
 
 export default function InvestigationDeskPage() {
@@ -106,7 +105,7 @@ export default function InvestigationDeskPage() {
         <div className={styles.panel}>
           {tab === "timeline" && <>
             <div className={styles.panelHead}><div><div className={styles.kicker}>SEQUENCE OF EVENTS</div><h2>Case timeline</h2><p>Record what happened and when. Sort by time to spot gaps.</p></div><span className={styles.count}>{data.events.length} EVENTS</span></div>
-            <div className={styles.timeline}>{sortedEvents.map((item, i) => <article className={styles.event} key={item.id}><div className={styles.time}>{item.time || "—"}</div><div className={styles.eventLine}><i/></div><div className={styles.eventBody}><h3>{item.title}</h3><p>{item.detail}</p><button aria-label="Delete event" onClick={() => update("events", data.events.filter(x => x.id !== item.id))}><Trash2 size={14}/></button></div></article>)}</div>
+            <div className={styles.timeline}>{sortedEvents.map((item) => <article className={styles.event} key={item.id}><div className={styles.time}>{item.time || "—"}</div><div className={styles.eventLine}><i/></div><div className={styles.eventBody}><h3>{item.title}</h3><p>{item.detail}</p><button aria-label="Delete event" onClick={() => update("events", data.events.filter(x => x.id !== item.id))}><Trash2 size={14}/></button></div></article>)}</div>
             <form className={styles.addForm} onSubmit={addEvent}><h3><FilePlus2 size={16}/> Add an event</h3><div className={styles.formGrid}><label>Time<input type="time" value={eventForm.time} onChange={e=>setEventForm({...eventForm,time:e.target.value})}/></label><label>Event title<input required value={eventForm.title} onChange={e=>setEventForm({...eventForm,title:e.target.value})} placeholder="What happened?"/></label></div><label>Details<input value={eventForm.detail} onChange={e=>setEventForm({...eventForm,detail:e.target.value})} placeholder="Source, witness or context"/></label><button className={styles.addButton}><Plus size={15}/> Add to timeline</button></form>
           </>}
           {tab === "people" && <>
@@ -119,7 +118,7 @@ export default function InvestigationDeskPage() {
             <div className={styles.clueList}>{data.clues.map(clue=><article className={styles.clue} key={clue.id}><div className={styles.clueTop}><span>CLUE / {clue.id.slice(0,5).toUpperCase()}</span><select aria-label="Clue status" value={clue.status} onChange={e=>update("clues",data.clues.map(x=>x.id===clue.id?{...x,status:e.target.value as Clue["status"]}:x))}><option value="open">Open</option><option value="question">Needs review</option><option value="verified">Verified observation</option></select><button aria-label="Delete clue" onClick={()=>update("clues",data.clues.filter(x=>x.id!==clue.id))}><Trash2 size={14}/></button></div><h3>{clue.title}</h3><p><b>Source:</b> {clue.source || "Not recorded"}</p><p><b>Interpretation:</b> {clue.interpretation || "Not recorded"}</p></article>)}</div>
             <form className={styles.addForm} onSubmit={addClue}><h3><Plus size={16}/> Register a clue</h3><label>Observation<input required value={clueForm.title} onChange={e=>setClueForm({...clueForm,title:e.target.value})} placeholder="What was noticed?"/></label><label>Source<input value={clueForm.source} onChange={e=>setClueForm({...clueForm,source:e.target.value})} placeholder="Where did it come from?"/></label><label>Interpretation<input value={clueForm.interpretation} onChange={e=>setClueForm({...clueForm,interpretation:e.target.value})} placeholder="What might it mean?"/></label><button className={styles.addButton}><Plus size={15}/> Add clue</button></form>
           </>}
-          {tab === "notes" && <div className={styles.notesPanel}><div className={styles.kicker}>PRIVATE FIELD NOTES</div><h2>Investigator's notebook</h2><p>Draft theories, questions and connections. Label speculation clearly.</p><textarea value={data.notes} onChange={e=>update("notes",e.target.value)} placeholder="Start writing your notes..."/><div className={styles.saved}><Check size={14}/> Autosaved in this browser</div></div>}
+          {tab === "notes" && <div className={styles.notesPanel}><div className={styles.kicker}>PRIVATE FIELD NOTES</div><h2>Investigator&apos;s notebook</h2><p>Draft theories, questions and connections. Label speculation clearly.</p><textarea value={data.notes} onChange={e=>update("notes",e.target.value)} placeholder="Start writing your notes..."/><div className={styles.saved}><Check size={14}/> Autosaved in this browser</div></div>}
         </div>
       </section>
       <footer className={styles.footer}>SLEUTHIVERSE · A UNIVERSE OF CLUES, CASES & CURIOUS MINDS.</footer>
