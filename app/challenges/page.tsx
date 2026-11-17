@@ -2,7 +2,8 @@ import Link from "next/link";
 import { createChallenge } from "./actions";
 import { createClient } from "@/lib/supabase/server";
 
-export default async function ChallengesPage() {
+export default async function ChallengesPage({ searchParams }: { searchParams: Promise<{ error?: string }> }) {
+  const { error: message } = await searchParams;
   const supabase = await createClient();
   const [{ data: { user } }, { data: challenges }] = await Promise.all([
     supabase.auth.getUser(),
@@ -16,6 +17,7 @@ export default async function ChallengesPage() {
         <div className="product-eyebrow">THE CASE ROOM / MYSTERY CHALLENGES</div>
         <h1>Every clue has a <em>story.</em></h1>
         <p className="product-lead">Solve fictional mysteries, compare deductions and publish your own fair-play cases. Solutions remain private from solvers.</p>
+        {message && <p className="product-error">{message}</p>}
         {user ? (
           <details className="compose-disclosure"><summary>Publish a new challenge</summary>
             <form action={createChallenge} className="compose-card">
