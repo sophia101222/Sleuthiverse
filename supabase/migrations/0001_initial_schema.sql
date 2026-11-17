@@ -1,4 +1,4 @@
--- Sleuniverse initial database schema
+-- Sleuthiverse initial database schema
 -- Run this file in Supabase SQL Editor.
 
 create extension if not exists pgcrypto;
