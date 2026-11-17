@@ -6,10 +6,11 @@ import { createClient } from "@/lib/supabase/server";
 export default async function ChallengeDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const supabase = await createClient();
-  const [{ data: { user } }, { data: challenge }, { data: theories }] = await Promise.all([
+  const [{ data: { user } }, { data: challenge }, { data: theories }, { data: officialAnswer }] = await Promise.all([
     supabase.auth.getUser(),
     supabase.from("challenges").select("id,title,premise,category,difficulty,created_at,author_id,profiles(display_name)").eq("id", id).maybeSingle(),
-    supabase.from("theories").select("id,body,visibility,created_at,profiles(display_name)").eq("challenge_id", id).order("created_at", { ascending: false }),
+    supabase.from("theories").select("id,author_id,body,visibility,created_at,profiles(display_name)").eq("challenge_id", id).order("created_at", { ascending: false }),
+    supabase.from("challenge_answers").select("answer").eq("challenge_id", id).maybeSingle(),
   ]);
   if (!challenge) notFound();
   const visibleTheories = (theories ?? []).filter((theory: any) => theory.visibility === "public" || theory.author_id === user?.id);
@@ -24,6 +25,7 @@ export default async function ChallengeDetailPage({ params }: { params: Promise<
           <h1>{challenge.title}</h1>
           <p className="detail-body">{challenge.premise}</p>
           <div className="post-byline">Case opened by {challenge.profiles?.display_name ?? "Investigator"} · {new Date(challenge.created_at).toLocaleDateString()}</div>
+          {user?.id === challenge.author_id && officialAnswer?.answer && <details className="spoiler-block author-answer"><summary>Your private official solution</summary><p>{officialAnswer.answer}</p></details>}
         </article>
         <section className="comments-section">
           <h2>Your deduction</h2>
