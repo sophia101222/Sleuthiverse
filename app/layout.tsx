@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Sleuniverse — A Universe of Clues",
+  title: "Sleuthiverse — A Universe of Clues",
   description: "A gathering place for mystery readers, puzzle solvers and curious minds.",
 };
 
