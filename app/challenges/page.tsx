@@ -36,7 +36,7 @@ export default async function ChallengesPage({ searchParams }: { searchParams: P
             <div className="post-meta"><span>{item.category}</span><span>{item.difficulty}</span></div>
             <h3><Link href={`/challenges/${item.id}`}>{item.title}</Link></h3>
             <p>{item.premise}</p>
-            <div className="post-byline">Created by {item.profiles?.display_name ?? "Investigator"} · {new Date(item.created_at).toLocaleDateString()}</div>
+            <div className="post-byline">Created by {item.profiles?.[0]?.display_name ?? "Investigator"} · {new Date(item.created_at).toLocaleDateString()}</div>
           </article>)}
           {(challenges ?? []).length === 0 && <div className="empty-feed">No published challenges yet. Be the first to open a case.</div>}
         </div>
