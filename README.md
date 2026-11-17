@@ -2,35 +2,27 @@
 
 A universe of clues, cases & curious minds.
 
-Sleuniverse is a mystery-fiction community concept for readers, puzzle solvers and storytellers. This first visual prototype establishes the brand direction and the main product areas.
+Sleuniverse is a mystery-fiction community for readers, puzzle solvers and storytellers.
 
-## Included in this first version
+## Stack
+- Next.js 15 / React 19 / TypeScript
+- Supabase Auth + PostgreSQL + Row Level Security
+- Tailwind CSS 4
 
-- Editorial-style landing page with a detective archive visual identity
-- Responsive navigation and page sections
-- Featured fictional case challenges with category filters and search
-- Save-case interaction and case preview modal
-- Community discussion preview
-- Investigation desk tool previews
-- Reference library introduction
+## Setup
+1. Install dependencies: `npm install`
+2. Copy `.env.example` to `.env.local`.
+3. Set `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
+4. Run the SQL in `supabase/migrations/0001_initial_schema.sql` in the Supabase SQL Editor.
+5. Run `npm run dev`.
 
-## Planned next
+## First implementation milestone
+- Supabase browser/server clients and session middleware
+- Email/password registration and sign-in
+- Member dashboard and sign-out
+- Initial schema for profiles, categories, posts, comments, challenges, theories and saved items
+- Private answer storage for challenges
+- Row Level Security policies
 
-1. Authentication and member profiles
-2. Real community posts, comments and moderation
-3. User-submitted mystery challenges and private/public theory submissions
-4. Investigation workspaces: timelines, character relationships and clue notebooks
-5. Curated detective-fiction reference library
-
-## Safety and scope
-
-The investigation tools are designed for fictional-story consistency, literary analysis and safe educational reference. They are not intended to simulate real-world crimes or provide actionable instructions for harming people.
-
-## Run locally
-
-```bash
-npm install
-npm run dev
-```
-
-Built with Next.js, React, TypeScript and Lucide icons.
+## Safety scope
+Investigation tools are for fictional-story consistency, literary analysis and safe educational reference. They do not simulate real-world crimes or provide actionable instructions for harming people.
