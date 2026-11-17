@@ -1,8 +1,8 @@
-# Sleuniverse
+# Sleuthiverse
 
 A universe of clues, cases & curious minds.
 
-Sleuniverse is a mystery-fiction community for readers, puzzle solvers and storytellers.
+Sleuthiverse is a mystery-fiction community for readers, puzzle solvers and storytellers.
 
 ## Stack
 - Next.js 15 / React 19 / TypeScript
