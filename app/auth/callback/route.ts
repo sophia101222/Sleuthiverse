@@ -9,7 +9,7 @@ export async function GET(request: Request) {
     const supabase = await createClient();
     const { error } = await supabase.auth.exchangeCodeForSession(code);
     if (!error) {
-      return NextResponse.redirect(new URL("/dashboard", requestUrl.origin));
+      return NextResponse.redirect(new URL("/login?message=Your%20email%20has%20been%20confirmed.%20You%20can%20now%20sign%20in.", requestUrl.origin));
     }
   }
 
