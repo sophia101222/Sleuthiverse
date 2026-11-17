@@ -3,7 +3,8 @@ import { redirect } from "next/navigation";
 import { createPost } from "./actions";
 import { createClient } from "@/lib/supabase/server";
 
-export default async function CommunityPage() {
+export default async function CommunityPage({ searchParams }: { searchParams: Promise<{ error?: string }> }) {
+  const { error: message } = await searchParams;
   const supabase = await createClient();
   const [{ data: { user } }, { data: categories }, { data: posts, error }] = await Promise.all([
     supabase.auth.getUser(),
@@ -26,6 +27,7 @@ export default async function CommunityPage() {
         <h1>Ideas are better <em>shared.</em></h1>
         <p className="product-lead">Discuss detective fiction, compare interpretations and exchange theories. Mark spoilers so other readers can enjoy the reveal at their own pace.</p>
 
+        {message && <p className="product-error">{message}</p>}
         {user ? (
           <form action={createPost} className="compose-card">
             <h2>Start a conversation</h2>
