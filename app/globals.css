@@ -38,3 +38,56 @@
 .member-grid h2{font:600 22px 'Playfair Display',serif;margin:17px 0 8px}
 .member-grid p{font-size:11px;line-height:1.7;color:#77776d;margin:0}
 @media(max-width:650px){.member-content{padding:48px 20px}.member-grid{grid-template-columns:1fr}.member-topbar{padding:0 20px}.auth-brand span{display:none}}
+
+/* Functional community and case room */
+.section-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.product-page{min-height:100vh;background:var(--paper);color:var(--ink)}
+.product-topbar{height:72px;padding:0 max(24px,calc((100vw - 1120px)/2));display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);background:#eee9df}
+.product-topbar nav{display:flex;gap:24px;align-items:center}
+.product-topbar nav a,.back-link{color:var(--green);font-size:12px;text-decoration:none}
+.product-content{max-width:960px;margin:0 auto;padding:66px 24px 90px}
+.narrow-content{max-width:760px}
+.product-eyebrow{font:10px 'DM Mono',monospace;letter-spacing:1.6px;color:var(--wine);margin-bottom:14px}
+.product-content>h1,.post-detail h1{font:600 clamp(38px,6vw,58px)/1.08 'Playfair Display',serif;letter-spacing:-1.2px;margin:0;color:var(--ink)}
+.product-content>h1 em{color:var(--wine);font-weight:500}
+.product-lead{max-width:660px;color:var(--muted);font-size:14px;line-height:1.85;margin:16px 0 34px}
+.compose-card{display:grid;gap:15px;background:var(--white);border:1px solid var(--line);padding:25px;margin:30px 0}
+.compose-card h2,.feed-heading h2,.comments-section>h2{font:600 24px 'Playfair Display',serif;margin:0;color:var(--ink)}
+.compose-card label{display:grid;gap:8px;color:#66675e;font:10px 'DM Mono',monospace;letter-spacing:.7px}
+.compose-card input:not([type=checkbox]),.compose-card textarea,.compose-card select{width:100%;border:1px solid #d9d1c3;background:#f7f4ed;padding:12px;color:var(--ink);font:13px 'DM Sans',sans-serif;outline:none}
+.compose-card textarea{resize:vertical;line-height:1.65}
+.compose-card input:focus,.compose-card textarea:focus,.compose-card select:focus{border-color:var(--green);box-shadow:0 0 0 2px #263b3515}
+.inline-check{display:flex!important;align-items:center;gap:9px!important}
+.inline-check input{accent-color:var(--green)}
+.product-primary{justify-self:start;border:1px solid var(--green);background:var(--green);color:#fbf9f4;padding:12px 18px;font:600 12px 'DM Sans',sans-serif;cursor:pointer}
+.product-primary:hover{background:var(--green2)}
+.signin-prompt{padding:17px 20px;margin:24px 0;background:#ebe5d9;border:1px solid var(--line);color:var(--muted);font-size:12px}
+.signin-prompt a,.back-link{color:var(--wine);font-weight:600}
+.feed-heading{display:flex;justify-content:space-between;align-items:center;margin:46px 0 17px}
+.feed-heading>span{font:10px 'DM Mono',monospace;letter-spacing:1px;color:#8a8478}
+.post-feed,.challenge-feed{display:grid;gap:13px}
+.post-card,.challenge-card,.post-detail,.comment-card{background:var(--white);border:1px solid var(--line);padding:22px 24px}
+.post-meta{display:flex;justify-content:space-between;gap:12px;font:9px 'DM Mono',monospace;letter-spacing:1px;color:var(--wine);text-transform:uppercase}
+.post-card h3,.challenge-card h3{font:600 22px 'Playfair Display',serif;margin:12px 0 8px}
+.post-card h3 a,.challenge-card h3 a{color:var(--ink);text-decoration:none}
+.post-card h3 a:hover,.challenge-card h3 a:hover{color:var(--wine)}
+.post-card>p,.challenge-card>p,.comment-card>p{color:#65665e;font-size:13px;line-height:1.8;white-space:pre-wrap;margin:8px 0 14px}
+.post-byline,.comment-card small{color:#8a8478;font:10px 'DM Mono',monospace;letter-spacing:.3px}
+.spoiler-block{margin:12px 0;color:var(--muted);font-size:12px}
+.spoiler-block summary{cursor:pointer;color:var(--wine);font-weight:600}
+.spoiler-block p{white-space:pre-wrap;line-height:1.8}
+.empty-feed,.product-error{padding:28px;background:#ebe5d9;color:var(--muted);font-size:13px}
+.compose-disclosure{margin:24px 0}
+.compose-disclosure>summary{display:inline-block;padding:12px 16px;border:1px solid var(--green);color:var(--green);cursor:pointer;font-size:12px;font-weight:600}
+.compose-disclosure[open]>summary{margin-bottom:0;background:var(--green);color:white}
+.compose-disclosure .compose-card{margin-top:0}
+.back-link{display:inline-block;margin-bottom:24px;text-decoration:none;font-size:12px}
+.post-detail{padding:30px;margin-bottom:30px}
+.post-detail h1{font-size:clamp(34px,5vw,48px);margin:12px 0 18px}
+.detail-body{white-space:pre-wrap;color:#5f625a;font-size:14px;line-height:1.9}
+.comments-section>h2{margin:32px 0 18px}
+.comments-section>h2 span{font:11px 'DM Mono',monospace;color:#8a8478}
+.comment-card{margin:12px 0}
+.comment-card .post-meta{margin-bottom:12px}
+.challenge-detail{border-top:3px solid var(--gold)}
+@media(max-width:650px){.product-topbar{padding:0 18px}.product-topbar nav{gap:13px}.product-topbar nav a{font-size:11px}.product-content{padding:44px 18px 65px}.compose-card,.post-card,.challenge-card,.post-detail,.comment-card{padding:18px}.feed-heading{margin-top:34px}.section-actions{margin-top:14px}}
