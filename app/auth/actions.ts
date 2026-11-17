@@ -3,7 +3,7 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 
-export type AuthState = { error?: string };
+export type AuthState = { error?: string; success?: string };
 
 export async function signIn(_prev: AuthState, formData: FormData): Promise<AuthState> {
   const email = String(formData.get("email") ?? "").trim();
@@ -36,7 +36,7 @@ export async function resendConfirmation(_prev: AuthState, formData: FormData): 
   });
 
   if (error) return { error: "We couldn't resend the email right now. Please wait a little and try again." };
-  return { success: "If this account still needs confirmation, a new email has been sent. Check your inbox and spam folder." } as AuthState;
+  return { success: "If this account still needs confirmation, a new email has been sent. Check your inbox and spam folder." };
 }
 
 export async function signUp(_prev: AuthState, formData: FormData): Promise<AuthState> {
