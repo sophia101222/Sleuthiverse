@@ -91,3 +91,31 @@
 .comment-card .post-meta{margin-bottom:12px}
 .challenge-detail{border-top:3px solid var(--gold)}
 @media(max-width:650px){.product-topbar{padding:0 18px}.product-topbar nav{gap:13px}.product-topbar nav a{font-size:11px}.product-content{padding:44px 18px 65px}.compose-card,.post-card,.challenge-card,.post-detail,.comment-card{padding:18px}.feed-heading{margin-top:34px}.section-actions{margin-top:14px}}
+
+
+.resend-confirmation {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 0.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+
+.resend-confirmation > p {
+  margin: 0;
+  color: var(--muted, #6f716c);
+  font-size: 0.88rem;
+}
+
+.auth-form .auth-secondary-button {
+  width: 100%;
+  min-height: 42px;
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--green);
+  font-weight: 600;
+}
+
+.auth-form .auth-secondary-button:hover {
+  background: rgba(38, 59, 53, 0.06);
+}
