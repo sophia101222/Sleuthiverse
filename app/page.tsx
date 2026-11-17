@@ -60,6 +60,7 @@ export default function Home() {
   ];
 
   const changeSection = (label: string) => {
+    if (label === "Investigation desk") { window.location.href = "/desk"; return; }
     setActive(label);
     setMenuOpen(false);
     if (label !== "Overview") {
@@ -97,7 +98,7 @@ export default function Home() {
         <header className="topbar">
           <button className="mobile-menu" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">{menuOpen?<X/>:<Menu/>}</button>
           <div className="breadcrumb"><span>THE SOCIETY</span><b>/</b><strong>{active.toUpperCase()}</strong></div>
-          <div className="top-actions"><span className="status-dot"/> <span className="status-text">THE ARCHIVES ARE OPEN</span><Link className="join-button" href="/signup">Join the society <ArrowRight size={15}/></Link><Link className="text-button" href="/login">Sign in</Link></div>
+          <div className="top-actions"><span className="status-dot"/> <span className="status-text">THE ARCHIVES ARE OPEN</span><Link className="join-button" href="/desk">Explore as guest <ArrowRight size={15}/></Link></div>
         </header>
 
         <div className="content-wrap">
@@ -158,9 +159,9 @@ export default function Home() {
           <section className="workspace-section" id="workspace">
             <div className="section-heading"><div><div className="eyebrow"><span/> YOUR INVESTIGATION DESK</div><h2>Make sense of the <em>evidence.</em></h2><p>Keep your notes, connections and creative threads in one place.</p></div><span className="coming-soon">YOUR PRIVATE WORKSPACE</span></div>
             <div className="tool-grid">
-              <article className="tool-card"><IconTile icon={Clock3}/><span>01 / CHRONOLOGY</span><h3>Timeline builder</h3><p>Arrange events, compare accounts and spot contradictions in a story.</p><button onClick={()=>setSelectedCase({id:"TOOL-01",category:"Investigation tool",difficulty:"Workspace",title:"Timeline builder",description:"A structured workspace for arranging events and comparing the order of story events. This tool is planned for a later build.",author:"Sleuthiverse",time:"Coming soon",replies:0,accent:"green",tag:"INVESTIGATION DESK"})}>Explore tool <ArrowRight size={14}/></button></article>
-              <article className="tool-card"><IconTile icon={Users} tone="wine"/><span>02 / CONNECTIONS</span><h3>Character web</h3><p>Map relationships, motives and the links between every character.</p><button onClick={()=>setSelectedCase({id:"TOOL-02",category:"Investigation tool",difficulty:"Workspace",title:"Character web",description:"A visual relationship map for characters and their story connections. This tool is planned for a later build.",author:"Sleuthiverse",time:"Coming soon",replies:0,accent:"wine",tag:"INVESTIGATION DESK"})}>Explore tool <ArrowRight size={14}/></button></article>
-              <article className="tool-card"><IconTile icon={Lightbulb} tone="gold"/><span>03 / DEDUCTION</span><h3>Logic notebook</h3><p>Collect clues, record hypotheses and test whether the details add up.</p><button onClick={()=>setSelectedCase({id:"TOOL-03",category:"Investigation tool",difficulty:"Workspace",title:"Logic notebook",description:"A place to collect clues, record hypotheses and check narrative consistency. This tool is planned for a later build.",author:"Sleuthiverse",time:"Coming soon",replies:0,accent:"gold",tag:"INVESTIGATION DESK"})}>Explore tool <ArrowRight size={14}/></button></article>
+              <article className="tool-card"><IconTile icon={Clock3}/><span>01 / CHRONOLOGY</span><h3>Timeline builder</h3><p>Arrange events, compare accounts and spot contradictions in a story.</p><button onClick={()=>{ window.location.href="/desk"; }}>Explore tool <ArrowRight size={14}/></button></article>
+              <article className="tool-card"><IconTile icon={Users} tone="wine"/><span>02 / CONNECTIONS</span><h3>Character web</h3><p>Map relationships, motives and the links between every character.</p><button onClick={()=>{ window.location.href="/desk"; }}>Explore tool <ArrowRight size={14}/></button></article>
+              <article className="tool-card"><IconTile icon={Lightbulb} tone="gold"/><span>03 / DEDUCTION</span><h3>Logic notebook</h3><p>Collect clues, record hypotheses and test whether the details add up.</p><button onClick={()=>{ window.location.href="/desk"; }}>Explore tool <ArrowRight size={14}/></button></article>
             </div>
           </section>
 
