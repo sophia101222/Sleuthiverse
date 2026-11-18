@@ -30,6 +30,7 @@ const starterData: DeskData = {
   ],
   notes: "Working theory:\nThe timeline may be more useful than any single statement. Keep observed facts separate from interpretations.\n\nQuestions to test:\n- Which clock was checked most recently?\n- Do the guests agree on the order of events?",
 };
+const emptyData = (): DeskData => ({ events: [], people: [], clues: [], notes: "" });
 const sampleCase: CaseFile = { id: "sample-ashford", title: "The Ashford House Mystery", source: "Sample case", updatedAt: "Sample file", data: starterData };
 const makeCase = (title: string, source = "Novel / case analysis"): CaseFile => ({ id: crypto.randomUUID(), title, source, updatedAt: new Date().toLocaleString(), data: emptyData() });
 
