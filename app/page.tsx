@@ -55,12 +55,12 @@ export default function Home() {
     { label:"Community", icon:Users },
     { label:"Case challenges", icon:Fingerprint },
     { label:"Investigation desk", icon:FileSearch },
-    { label:"Creative studio", icon:Feather },
+    { label:"Story workshop", icon:Feather },
     { label:"The library", icon:Library },
   ];
 
   const changeSection = (label: string) => {
-    if (label === "Investigation desk") { window.location.href = "/desk"; return; }
+    if (label === "Investigation desk" || label === "Story workshop") { window.location.href = label === "Investigation desk" ? "/desk" : "/workshop"; return; }
     setActive(label);
     setMenuOpen(false);
     if (label !== "Overview") {
