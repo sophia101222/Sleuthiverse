@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Plus, Trash2, Check, Users, Network, CalendarClock, Package, BookOpen, Lightbulb, ScrollText, Feather } from "lucide-react";
+import { ArrowLeft, Plus, Trash2, Check, Network } from "lucide-react";
 import styles from "../workshop.module.css";
 
 type Character = { id: string; name: string; role: string; motive: string; secret: string };
