@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, BookOpen, Clock3, Feather, FileSearch, Fingerprint, Library, Network, PenTool, ShieldCheck, Sparkles, Users } from "lucide-react";
+import { ArrowRight, BookOpen, Clock3, Feather, FileSearch, Fingerprint, Library, Network, Package, PenTool, ShieldCheck, Sparkles, Users } from "lucide-react";
 import styles from "./tools.module.css";
 
 const groups = [
@@ -27,10 +27,12 @@ const groups = [
     action: "Open story workshop",
     tone: "wine",
     tools: [
-      ["World bible", "Record setting, rules, history and atmosphere.", Library],
-      ["Character web", "Design roles, motives and relationships.", Network],
-      ["Plot architecture", "Plan chronology, turning points and reveals.", PenTool],
-      ["Mystery design", "Track clues, red herrings and the final explanation.", Sparkles],
+      ["Worldbuilding", "Develop setting, rules, history and atmosphere.", Library],
+      ["Story timeline", "Plan chronology, event order and time gaps.", Clock3],
+      ["Character relationships", "Design the cast and visualize connections.", Network],
+      ["Important objects", "Track key objects and their narrative significance.", Package],
+      ["Plot architecture", "Plan turning points, pacing and reveals.", PenTool],
+      ["Clues & misdirection", "Track clues, red herrings and the final explanation.", Sparkles],
     ],
   },
 ];
