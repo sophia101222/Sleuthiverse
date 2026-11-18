@@ -11,7 +11,7 @@ type Props = {
 
 const emptyAuthState: AuthState = {};
 
-async function noopResendAction(_state: AuthState, _formData: FormData): Promise<AuthState> {
+async function noopResendAction(): Promise<AuthState> {
   return {};
 }
 
