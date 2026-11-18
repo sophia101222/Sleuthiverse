@@ -98,7 +98,7 @@ export default function Home() {
         <header className="topbar">
           <button className="mobile-menu" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">{menuOpen?<X/>:<Menu/>}</button>
           <div className="breadcrumb"><span>THE SOCIETY</span><b>/</b><strong>{active.toUpperCase()}</strong></div>
-          <div className="top-actions"><span className="status-dot"/> <span className="status-text">THE ARCHIVES ARE OPEN</span><Link className="join-button" href="/desk">Explore as guest <ArrowRight size={15}/></Link></div>
+          <div className="top-actions"><span className="status-dot"/> <span className="status-text">THE ARCHIVES ARE OPEN</span><Link className="join-button" href="/tools">Explore tools <ArrowRight size={15}/></Link></div>
         </header>
 
         <div className="content-wrap">
