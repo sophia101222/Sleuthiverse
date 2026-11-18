@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Plus, Trash2, Check, Network } from "lucide-react";
-import styles from "../workshop.module.css";
+import styles from "./workshop.module.css";
 
 type Character = { id: string; name: string; role: string; motive: string; secret: string };
 type Beat = { id: string; title: string; act: string; purpose: string };
