@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, BookOpen, Check, Feather, FilePlus2, Fingerprint, Lightbulb, Network, Plus, ScrollText, Trash2, WandSparkles, X } from "lucide-react";
 import styles from "./workshop.module.css";
