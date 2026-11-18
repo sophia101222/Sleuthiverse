@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Plus, Trash2, Check } from "lucide-react";
-import styles from "../desk.module.css";
+import styles from "./desk.module.css";
 
 type EventItem={id:string;time:string;title:string;detail:string};
 type Person={id:string;name:string;role:string;notes:string};
