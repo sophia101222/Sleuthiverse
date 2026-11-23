@@ -248,7 +248,19 @@ const zh:Record<string,string>={
 "Case opened by":"案件发布者",
 "Your private official solution":"你的私人正式解答",
 "Back to case room":"返回推理室",
-"Back to the reading room":"返回阅览室"
+"Back to the reading room":"返回阅览室",
+"Create a case file":"新建案件档案",
+"Create and open":"创建并打开",
+"NEW INVESTIGATION":"新建调查项目",
+"New investigation":"新建调查项目",
+"Source type":"分析对象",
+"Novel / case analysis":"小说 / 案件分析",
+"Short story":"短篇小说",
+"Film / television":"影视作品",
+"Original fictional case":"原创虚构案件",
+"Please enter a project title.":"请填写项目名称。",
+"Could not save this project. Check browser storage and try again.":"保存失败，请检查浏览器存储空间后重试。",
+"Your work stays yours.":"你的创作由你掌控。"
 };
 const en:Record<string,string>=Object.fromEntries(Object.entries(zh).map(([a,b])=>[b,a]));
 function translate(root:ParentNode,language:Lang){
