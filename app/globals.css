@@ -212,7 +212,6 @@ html[lang="zh"] .home-tools-grid,html[lang="zh"] .home-overview-grid{gap:18px}
 
 
 /* Refined Chinese editorial typography and balanced bilingual hierarchy. */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap');
 html[lang="zh"] .home-v2{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif}
 html[lang="zh"] .home-v2 .brand-name{font-family:"DM Sans",sans-serif;letter-spacing:-.4px}
 html[lang="zh"] .home-v2 .brand-name small{font:500 10px "Noto Sans SC",sans-serif;letter-spacing:1.5px}
