@@ -208,3 +208,43 @@ html[lang="zh"] .home-welcome-copy h1{font-size:clamp(42px,4.8vw,62px)}
 html[lang="zh"] .home-tools-grid,html[lang="zh"] .home-overview-grid{gap:18px}
 .language-toggle{font-family:"Noto Sans SC","PingFang SC",sans-serif;min-width:82px;border-radius:2px}
 @media(max-width:700px){html[lang="zh"] .knowledge-hero{padding:48px 0 34px}html[lang="zh"] .knowledge-hero h1{font-size:clamp(34px,9vw,48px)}html[lang="zh"] .knowledge-card{min-height:0}}
+
+
+/* Refined Chinese editorial typography and balanced bilingual hierarchy. */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap');
+html[lang="zh"] .home-v2{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif}
+html[lang="zh"] .home-v2 .brand-name{font-family:"DM Sans",sans-serif;letter-spacing:-.4px}
+html[lang="zh"] .home-v2 .brand-name small{font:500 10px "Noto Sans SC",sans-serif;letter-spacing:1.5px}
+html[lang="zh"] .home-v2 .sidebar-note p{font:500 14px/1.95 "Noto Serif SC","Songti SC",serif;letter-spacing:.02em}
+html[lang="zh"] .home-v2 .sidebar-note>span{font:500 10px "Noto Sans SC",sans-serif;letter-spacing:1px}
+html[lang="zh"] .home-v2 .eyebrow{font:600 12px "Noto Sans SC",sans-serif;letter-spacing:.08em}
+html[lang="zh"] .home-v2 .home-welcome h1{font:600 clamp(38px,4.3vw,58px)/1.42 "Noto Serif SC","Songti SC",serif;letter-spacing:.015em}
+html[lang="zh"] .home-v2 .home-welcome-copy>p{font:400 15px/2 "Noto Sans SC",sans-serif;max-width:450px;color:#666b62}
+html[lang="zh"] .home-v2 .welcome-art-label,html[lang="zh"] .home-v2 .welcome-paper small,html[lang="zh"] .home-v2 .welcome-art-caption{font:500 10px "Noto Sans SC",sans-serif;letter-spacing:.1em}
+html[lang="zh"] .home-v2 .welcome-paper strong{font:600 23px/1.65 "Noto Serif SC","Songti SC",serif;letter-spacing:.1em}
+html[lang="zh"] .home-v2 .welcome-paper>span{font:500 9px "Noto Sans SC",sans-serif;letter-spacing:.04em}
+html[lang="zh"] .home-v2 .overview-panel-top{font:600 11px "Noto Sans SC",sans-serif;letter-spacing:.08em}
+html[lang="zh"] .home-v2 .overview-panel h2,html[lang="zh"] .home-v2 .home-section-heading h2{font:600 26px/1.5 "Noto Serif SC","Songti SC",serif;letter-spacing:.01em}
+html[lang="zh"] .home-v2 .overview-panel p,html[lang="zh"] .home-v2 .home-section-heading p{font:400 13px/1.9 "Noto Sans SC",sans-serif}
+html[lang="zh"] .home-v2 .overview-link,html[lang="zh"] .home-v2 .home-tool h3{font-family:"Noto Sans SC",sans-serif;font-size:13px}
+html[lang="zh"] .home-v2 .home-tool p{font:400 12px/1.8 "Noto Sans SC",sans-serif}
+html[lang="zh"] .home-v2 .nav-item,html[lang="zh"] .home-v2 .join-button,html[lang="zh"] .home-v2 .primary-button,html[lang="zh"] .home-v2 .text-button,html[lang="zh"] .home-v2 .outline-button{font-family:"Noto Sans SC",sans-serif;font-size:13px}
+html[lang="zh"] .home-v2 .status-text,html[lang="zh"] .home-v2 .breadcrumb{font-family:"Noto Sans SC",sans-serif;letter-spacing:.08em}
+html[lang="zh"] .home-v2 .footer>span{font:10px "Noto Sans SC",sans-serif;letter-spacing:.02em}
+html[lang="zh"] .knowledge-page{font-family:"Noto Sans SC","PingFang SC",sans-serif}
+html[lang="zh"] .knowledge-header .knowledge-brand{font-family:"DM Sans",sans-serif;font-size:12px;letter-spacing:.08em}
+html[lang="zh"] .knowledge-header .knowledge-brand span{font:500 12px "Noto Sans SC",sans-serif;letter-spacing:0}
+html[lang="zh"] .knowledge-header>a:last-child{font-size:13px}
+html[lang="zh"] .knowledge-kicker{font:600 12px "Noto Sans SC",sans-serif;letter-spacing:.12em}
+html[lang="zh"] .knowledge-hero h1{font:600 clamp(35px,5vw,52px)/1.5 "Noto Serif SC","Songti SC",serif;letter-spacing:.02em}
+html[lang="zh"] .knowledge-hero p{font:400 15px/2 "Noto Sans SC",sans-serif;max-width:680px}
+html[lang="zh"] .knowledge-card{padding:24px 25px 21px;min-height:340px;gap:0}
+html[lang="zh"] .knowledge-card-kicker{font:600 11px "Noto Sans SC",sans-serif;letter-spacing:.08em}
+html[lang="zh"] .knowledge-card h2{font:600 20px/1.55 "Noto Serif SC","Songti SC",serif;letter-spacing:.01em;margin:12px 0 8px}
+html[lang="zh"] .knowledge-card p{font:400 13px/1.9 "Noto Sans SC",sans-serif;color:#686b63;margin:0 0 13px}
+html[lang="zh"] .knowledge-card ul{padding-left:1.1em;margin:0 0 18px;display:grid;gap:5px}
+html[lang="zh"] .knowledge-card li{font:400 12px/1.75 "Noto Sans SC",sans-serif;color:#73746c}
+html[lang="zh"] .knowledge-soon{font:500 11px "Noto Sans SC",sans-serif;letter-spacing:.02em;padding-top:13px}
+html[lang="zh"] .knowledge-disclaimer p{font:400 12px/1.9 "Noto Sans SC",sans-serif}
+html[lang="zh"] .knowledge-disclaimer{align-items:center;padding:18px 20px}
+@media(max-width:700px){html[lang="zh"] .home-v2 .home-welcome h1{font-size:38px}html[lang="zh"] .home-v2 .overview-panel h2,html[lang="zh"] .home-v2 .home-section-heading h2{font-size:23px}html[lang="zh"] .knowledge-card{min-height:0}}
