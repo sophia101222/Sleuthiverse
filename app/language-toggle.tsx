@@ -1,0 +1,1 @@
+"use client";import{useLanguage}from"./language-provider";export default function LanguageToggle(){const{language,toggle}=useLanguage();return <button className="language-toggle" onClick={toggle} aria-label="Switch language">{language==="en"?"中文":"English"}</button>}
