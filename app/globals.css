@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&family=ZCOOL+XiaoWei&display=swap');
 @import "tailwindcss";
 
 :root{--paper:#f4f0e7;--paper2:#ebe5d9;--ink:#292b28;--muted:#77776d;--green:#263b35;--green2:#344c43;--wine:#70464b;--gold:#a98750;--line:#d8d0c2;--white:#fbf9f4}
@@ -251,7 +252,6 @@ html[lang="zh"] .knowledge-disclaimer{align-items:center;padding:18px 20px}
 
 
 /* A more literary Chinese system: restrained editorial serif, readable sans, and a handwritten accent. */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&family=ZCOOL+XiaoWei&display=swap');
 html[lang="zh"] .home-v2,html[lang="zh"] .knowledge-page{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif}
 html[lang="zh"] .home-v2 .home-welcome h1{font-family:"Noto Serif SC","Songti SC",serif;font-size:clamp(36px,4.2vw,54px);line-height:1.38;max-width:590px;text-wrap:balance;line-break:strict;word-break:normal}
 html[lang="zh"] .home-v2 .home-welcome-copy>p{font-size:14px;line-height:1.9;max-width:440px;text-wrap:pretty;line-break:strict}
