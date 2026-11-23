@@ -261,3 +261,27 @@ html[lang="zh"] .knowledge-hero h1,html[lang="zh"] .knowledge-card h2{font-famil
 html[lang="zh"] .knowledge-hero p,html[lang="zh"] .knowledge-card p,html[lang="zh"] .knowledge-card li{font-family:"Noto Sans SC","PingFang SC",sans-serif;line-break:strict;text-wrap:pretty}
 html[lang="zh"] .home-v2 .welcome-art-caption,html[lang="zh"] .home-v2 .welcome-art-label{font-family:"Noto Sans SC",sans-serif;letter-spacing:.08em}
 @media(max-width:700px){html[lang="zh"] .home-v2 .home-welcome h1{font-size:clamp(34px,8.5vw,42px);max-width:100%}}
+
+/* Original Sleuthiverse archive artwork, restored from the first homepage concept. */
+.home-v2 .restored-hero-art{height:auto;aspect-ratio:1.207;min-height:0;padding:0;background:#293b35;position:relative;overflow:hidden;color:#e8dfcc;isolation:isolate}
+.home-v2 .restored-hero-art:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 5.8%,rgba(255,255,255,.025) 5.95% 6.1%),repeating-linear-gradient(0deg,transparent 0 11.6%,rgba(255,255,255,.025) 11.75% 11.9%);z-index:-1}
+.home-v2 .restored-hero-art .art-topline,.home-v2 .restored-hero-art .art-bottom{left:4.5%;right:4.5%;font-size:clamp(7px,.7vw,10px);letter-spacing:1.15px}
+.home-v2 .restored-hero-art .art-topline{top:5%}
+.home-v2 .restored-hero-art .art-topline span:last-child{padding:5px 9px}
+.home-v2 .restored-hero-art .moon-disc{width:43%;height:auto;aspect-ratio:1;right:8%;top:17%}
+.home-v2 .restored-hero-art .magnifier{left:17.5%;top:25%;width:32%;height:auto;aspect-ratio:1;transform:none}
+.home-v2 .restored-hero-art .lens{width:100%;height:auto;aspect-ratio:1;border-width:clamp(5px,.9vw,11px)}
+.home-v2 .restored-hero-art .lens svg{width:48%;height:48%}
+.home-v2 .restored-hero-art .handle{width:11%;height:65%;left:45%;top:83%;border-radius:9px}
+.home-v2 .restored-hero-art .paper-back{width:32%;height:48%;right:5%;top:18%;padding:3.5%;transform:rotate(8deg)}
+.home-v2 .restored-hero-art .paper-back b{font-size:clamp(17px,2.1vw,30px);line-height:1.18;margin-top:16%}
+.home-v2 .restored-hero-art .paper-back i{font-size:clamp(7px,.8vw,11px);margin-top:14%}
+.home-v2 .restored-hero-art .paper-front{width:39%;height:45%;left:29%;bottom:4%;padding:3.2%;transform:rotate(-7deg)}
+.home-v2 .restored-hero-art .paper-front strong{font-size:clamp(17px,2.3vw,32px);line-height:1.05;margin-top:9%}
+.home-v2 .restored-hero-art .paper-front .paper-lines{height:18%;margin-top:8%}
+.home-v2 .restored-hero-art .paper-front>span{font-size:clamp(7px,.8vw,11px);margin-top:4%}
+.home-v2 .restored-hero-art .paper-back>span,.home-v2 .restored-hero-art .paper-front>small{font-size:clamp(7px,.75vw,10px)}
+html[lang="zh"] .home-v2 .restored-hero-art .paper-back b,html[lang="zh"] .home-v2 .restored-hero-art .paper-front strong{font-family:"Noto Serif SC","Noto Sans SC",serif;letter-spacing:.04em;line-height:1.35}
+html[lang="zh"] .home-v2 .restored-hero-art .paper-back i,html[lang="zh"] .home-v2 .restored-hero-art .paper-front>span{font-family:"Noto Sans SC",sans-serif;font-style:normal}
+@media(max-width:800px){.home-v2 .restored-hero-art{max-width:620px;width:100%}}
+@media(max-width:540px){.home-v2 .restored-hero-art .paper-back b{font-size:clamp(15px,4vw,21px)}.home-v2 .restored-hero-art .paper-front strong{font-size:clamp(15px,4.5vw,22px)}.home-v2 .restored-hero-art .magnifier{left:13%;top:27%;width:31%}}
