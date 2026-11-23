@@ -1,1 +1,24 @@
 .shell{min-height:100vh;background:#f4f0e7;color:#292b2a;padding:0 5vw 38px;font-family:Arial,Helvetica,sans-serif}.header{height:76px;border-bottom:1px solid #d9d1c4;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px;color:#263b35;text-decoration:none;font-size:13px;letter-spacing:.13em;font-weight:800}.brand span{color:#988b78;font-size:10px;font-weight:500}.header nav{display:flex;gap:24px}.header nav a{font-size:12px;color:#69746b;text-decoration:none}.hero{max-width:1120px;margin:64px auto 38px}.eyebrow{font-size:10px;letter-spacing:.17em;color:#8b7455;font-weight:700}.hero h1{font:400 clamp(40px,5vw,62px)/1.12 Georgia,serif;margin:14px 0}.hero h1 em{color:#60766a}.hero>p{max-width:620px;color:#777267;font-size:14px;line-height:1.8}.groups{max-width:1120px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:18px}.group{background:#fbf9f4;border:1px solid #e2dbd0;padding:26px;min-width:0}.groupTop{display:flex;justify-content:space-between;gap:12px;font-size:9px;letter-spacing:.13em;color:#9b8b74}.groupMain{display:grid;grid-template-columns:1fr;gap:22px;padding-top:30px}.groupIcon{width:48px;height:48px;display:grid;place-items:center;background:#e9eee8;color:#405c4b}.wine .groupIcon{background:#f0e8e5;color:#78565b}.group h2{font:400 30px Georgia,serif;margin:14px 0 9px}.groupMain>div>p{font-size:12px;line-height:1.75;color:#817c72;max-width:460px;min-height:64px}.action{display:inline-flex;align-items:center;gap:9px;margin-top:12px;padding:12px 15px;background:#304a3d;color:#fff;text-decoration:none;font-size:11px}.wine .action{background:#69484e}.toolList{border-top:1px solid #e8e1d7;padding-top:15px;display:grid;grid-template-columns:1fr 1fr;gap:16px}.tool{display:flex;gap:10px;align-items:flex-start;color:#687b6c}.wine .tool{color:#86646a}.tool div{display:flex;flex-direction:column;gap:4px}.tool strong{font:400 14px Georgia,serif;color:#3e433e}.tool span{font-size:10px;line-height:1.5;color:#898479}.note{max-width:1120px;margin:22px auto 0;border:1px solid #e1d9cc;background:#eeeae1;padding:15px 18px;display:flex;gap:12px;align-items:center;color:#6b7c6d}.note p{font-size:11px;line-height:1.6;color:#777267;margin:0}.note strong{color:#46594e}.footer{max-width:1120px;margin:28px auto 0;color:#a09482;font-size:9px;letter-spacing:.13em;text-align:center}@media(max-width:760px){.shell{padding:0 18px 30px}.header{height:65px}.brand{font-size:11px}.brand span{display:none}.header nav{gap:12px}.header nav a{font-size:10px}.hero{margin:40px auto 28px}.groups{grid-template-columns:1fr}.group{padding:21px}.toolList{gap:14px}.groupTop span:last-child{max-width:50%;text-align:right;line-height:1.5}}
+
+/* Chinese-specific hierarchy: larger labels, calmer body copy, less cramped metadata. */
+.shell:global(html[lang="zh"]) { font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif; }
+:global(html[lang="zh"]) .shell{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif}
+:global(html[lang="zh"]) .brand{font-family:"DM Sans",sans-serif;font-size:12px;letter-spacing:.08em}
+:global(html[lang="zh"]) .brand span{font:500 12px "Noto Sans SC",sans-serif;letter-spacing:0}
+:global(html[lang="zh"]) .header nav a{font-size:13px}
+:global(html[lang="zh"]) .eyebrow{font:600 12px "Noto Sans SC",sans-serif;letter-spacing:.08em}
+:global(html[lang="zh"]) .hero h1{font:600 clamp(36px,4.8vw,54px)/1.48 "Noto Serif SC","Songti SC",serif;letter-spacing:.01em}
+:global(html[lang="zh"]) .hero>p{font:400 15px/2 "Noto Sans SC",sans-serif;max-width:680px}
+:global(html[lang="zh"]) .group{padding:27px 28px}
+:global(html[lang="zh"]) .groupTop{font:500 11px "Noto Sans SC",sans-serif;letter-spacing:.04em}
+:global(html[lang="zh"]) .groupTop span:last-child{font-size:11px}
+:global(html[lang="zh"]) .group h2{font:600 23px/1.5 "Noto Serif SC","Songti SC",serif;margin:14px 0 9px}
+:global(html[lang="zh"]) .groupMain>div>p{font:400 13px/1.95 "Noto Sans SC",sans-serif;min-height:76px}
+:global(html[lang="zh"]) .action{font:500 13px "Noto Sans SC",sans-serif;padding:13px 16px}
+:global(html[lang="zh"]) .toolList{gap:17px 20px}
+:global(html[lang="zh"]) .tool strong{font:600 13px "Noto Sans SC",sans-serif}
+:global(html[lang="zh"]) .tool span{font:400 11px/1.8 "Noto Sans SC",sans-serif}
+:global(html[lang="zh"]) .note p{font:400 12px/1.9 "Noto Sans SC",sans-serif}
+:global(html[lang="zh"]) .note strong{font-weight:600}
+:global(html[lang="zh"]) .footer{font:500 10px "Noto Sans SC",sans-serif;letter-spacing:.04em}
+@media(max-width:760px){:global(html[lang="zh"]) .group{padding:22px}:global(html[lang="zh"]) .groupMain>div>p{min-height:0}:global(html[lang="zh"]) .hero h1{font-size:36px}}
