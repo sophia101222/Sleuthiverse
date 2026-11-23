@@ -21,3 +21,37 @@
 :global(html[lang="zh"]) .note strong{font-weight:600}
 :global(html[lang="zh"]) .footer{font:500 10px "Noto Sans SC",sans-serif;letter-spacing:.04em}
 @media(max-width:760px){:global(html[lang="zh"]) .group{padding:22px}:global(html[lang="zh"]) .groupMain>div>p{min-height:0}:global(html[lang="zh"]) .hero h1{font-size:36px}}
+
+
+.groupActions{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:12px}
+.groupActions .action{margin-top:0}
+.createAction{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:11px 14px;border:1px solid #cfc6b8;background:transparent;color:#42584b;font:600 11px Arial,sans-serif;cursor:pointer}
+.wine .createAction{color:#76535a;border-color:#d8c8c5}
+.createAction:hover{background:#e9eee8}
+.wine .createAction:hover{background:#f0e8e5}
+.modalOverlay{position:fixed;inset:0;z-index:120;background:#1f2925a8;display:grid;place-items:center;padding:20px}
+.modal{position:relative;width:min(100%,480px);background:#f8f5ee;border:1px solid #d8d0c2;padding:34px;box-shadow:0 24px 80px #151b1840}
+.modalClose{position:absolute;right:16px;top:15px;border:0;background:transparent;color:#69746b;cursor:pointer;padding:6px}
+.modalKicker{font:700 10px "DM Sans",sans-serif;letter-spacing:.14em;color:#8b7455}
+.modal h2{font:600 27px/1.35 Georgia,serif;color:#263b35;margin:12px 0 24px}
+.modal label{display:flex;flex-direction:column;gap:8px;margin:0 0 17px;color:#536057;font-size:12px;font-weight:600}
+.modal input,.modal select{width:100%;min-height:44px;border:1px solid #d8d0c2;background:#fffdf8;padding:10px 12px;color:#292b2a;font:13px Arial,sans-serif;outline:none}
+.modal input:focus,.modal select:focus{border-color:#718777;box-shadow:0 0 0 2px #71877722}
+.modalSubmit{display:inline-flex;align-items:center;gap:8px;margin-top:7px;padding:13px 17px;border:0;background:#304a3d;color:white;font-size:12px;font-weight:600;cursor:pointer}
+.formError{color:#8a4148;font-size:12px;margin:0 0 10px}
+:global(html[lang="zh"]) .shell{font-family:"Noto Sans SC","PingFang SC",sans-serif}
+:global(html[lang="zh"]) .hero h1{font-family:"Noto Serif SC","Songti SC",serif;font-size:clamp(35px,4.5vw,52px);line-height:1.42;text-wrap:balance;line-break:strict}
+:global(html[lang="zh"]) .hero>p{font-size:14px;line-height:1.9;max-width:650px;text-wrap:pretty;line-break:strict}
+:global(html[lang="zh"]) .group h2{font-family:"Noto Serif SC","Songti SC",serif;font-size:23px;line-height:1.45;text-wrap:balance}
+:global(html[lang="zh"]) .groupMain>div>p{font-size:13px;line-height:1.9;min-height:0;text-wrap:pretty;line-break:strict}
+:global(html[lang="zh"]) .groupTop{font-size:11px;letter-spacing:.02em}
+:global(html[lang="zh"]) .groupTop span:last-child{font-size:10px;letter-spacing:.01em}
+:global(html[lang="zh"]) .tool strong{font-family:"Noto Sans SC",sans-serif;font-size:13px;font-weight:600}
+:global(html[lang="zh"]) .tool span{font-family:"Noto Sans SC",sans-serif;font-size:11px;line-height:1.75}
+:global(html[lang="zh"]) .action,:global(html[lang="zh"]) .createAction{font-family:"Noto Sans SC",sans-serif;font-size:12px}
+:global(html[lang="zh"]) .modalKicker{font-family:"Noto Sans SC",sans-serif;letter-spacing:.08em}
+:global(html[lang="zh"]) .modal h2{font-family:"Noto Serif SC","Songti SC",serif;font-size:25px;line-height:1.5}
+:global(html[lang="zh"]) .modal label{font-family:"Noto Sans SC",sans-serif;font-size:13px}
+:global(html[lang="zh"]) .modal input,:global(html[lang="zh"]) .modal select{font-family:"Noto Sans SC",sans-serif;font-size:13px}
+:global(html[lang="zh"]) .modalSubmit{font-family:"Noto Sans SC",sans-serif;font-size:13px}
+@media(max-width:760px){.modal{padding:28px 22px}:global(html[lang="zh"]) .hero h1{font-size:35px}}
