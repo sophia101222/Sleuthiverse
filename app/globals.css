@@ -248,3 +248,17 @@ html[lang="zh"] .knowledge-soon{font:500 11px "Noto Sans SC",sans-serif;letter-s
 html[lang="zh"] .knowledge-disclaimer p{font:400 12px/1.9 "Noto Sans SC",sans-serif}
 html[lang="zh"] .knowledge-disclaimer{align-items:center;padding:18px 20px}
 @media(max-width:700px){html[lang="zh"] .home-v2 .home-welcome h1{font-size:38px}html[lang="zh"] .home-v2 .overview-panel h2,html[lang="zh"] .home-v2 .home-section-heading h2{font-size:23px}html[lang="zh"] .knowledge-card{min-height:0}}
+
+
+/* A more literary Chinese system: restrained editorial serif, readable sans, and a handwritten accent. */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&family=ZCOOL+XiaoWei&display=swap');
+html[lang="zh"] .home-v2,html[lang="zh"] .knowledge-page{font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif}
+html[lang="zh"] .home-v2 .home-welcome h1{font-family:"Noto Serif SC","Songti SC",serif;font-size:clamp(36px,4.2vw,54px);line-height:1.38;max-width:590px;text-wrap:balance;line-break:strict;word-break:normal}
+html[lang="zh"] .home-v2 .home-welcome-copy>p{font-size:14px;line-height:1.9;max-width:440px;text-wrap:pretty;line-break:strict}
+html[lang="zh"] .home-v2 .welcome-paper strong{font-family:"ZCOOL XiaoWei","Noto Serif SC",serif;font-size:25px;line-height:1.65;letter-spacing:.08em}
+html[lang="zh"] .home-v2 .home-section-heading h2,html[lang="zh"] .home-v2 .overview-panel h2{font-family:"Noto Serif SC","Songti SC",serif;font-weight:600;line-height:1.45;text-wrap:balance;line-break:strict}
+html[lang="zh"] .home-v2 .home-tool h3,html[lang="zh"] .home-v2 .nav-item,html[lang="zh"] .home-v2 .primary-button,html[lang="zh"] .home-v2 .text-button,html[lang="zh"] .home-v2 .outline-button{font-family:"Noto Sans SC","PingFang SC",sans-serif}
+html[lang="zh"] .knowledge-hero h1,html[lang="zh"] .knowledge-card h2{font-family:"Noto Serif SC","Songti SC",serif;text-wrap:balance;line-break:strict}
+html[lang="zh"] .knowledge-hero p,html[lang="zh"] .knowledge-card p,html[lang="zh"] .knowledge-card li{font-family:"Noto Sans SC","PingFang SC",sans-serif;line-break:strict;text-wrap:pretty}
+html[lang="zh"] .home-v2 .welcome-art-caption,html[lang="zh"] .home-v2 .welcome-art-label{font-family:"Noto Sans SC",sans-serif;letter-spacing:.08em}
+@media(max-width:700px){html[lang="zh"] .home-v2 .home-welcome h1{font-size:clamp(34px,8.5vw,42px);max-width:100%}}
